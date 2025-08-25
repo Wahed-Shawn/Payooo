@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+
+.outfit-font {
+  font-family: "Outfit", sans-serif;
+}
+
+.border-class{
+  border: 2px solid red;
+  background-color: rgba(168, 165, 165, 0.169);
+}
