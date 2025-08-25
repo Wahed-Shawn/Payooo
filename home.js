@@ -33,6 +33,11 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
 
 })
 
+//Logout functionality
+document.getElementById('logout-btn').addEventListener('click',function(){
+    window.location.href = './index.html'
+})
+
 //Toggle feature functionality
 const addMoneyOption = document.getElementById('add-money-option')
 const cashoutMoneyOption = document.getElementById('cashout-money-option')
