@@ -34,25 +34,45 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
 })
 
 //Logout functionality
-document.getElementById('logout-btn').addEventListener('click',function(){
+document.getElementById('logout-btn').addEventListener('click', function () {
     window.location.href = './index.html'
 })
 
 //Toggle feature functionality
 const addMoneyOption = document.getElementById('add-money-option')
 const cashoutMoneyOption = document.getElementById('cashout-money-option')
+const transferMoneyOption = document.getElementById('transfer-money-option')
+const bonusMoneyOption = document.getElementById('bonus-money-option')
 
+//Funtion to toggle
+function toToggle(id1, id2) {
+    const form = document.getElementsByClassName('form')
+    const btnOption = document.getElementsByClassName('btn-option')
+
+    for (const val of form) {
+        val.style.display = 'none'
+    }
+    document.getElementById(id1).style.display = 'block'
+
+    for (const val of btnOption) {
+        val.classList.remove('border-class')
+    }
+    id2.classList.add('border-class')
+}
 
 addMoneyOption.addEventListener('click', function () {
-    addMoneyOption.classList.add('border-class')
-    cashoutMoneyOption.classList.remove('border-class')
-    document.getElementById('cashout-money-form').style.display = 'none'
-    document.getElementById('add-money-form').style.display = 'block'
+    toToggle('add-money-form', addMoneyOption)
+
 })
 
 cashoutMoneyOption.addEventListener('click', function () {
-    cashoutMoneyOption.classList.add('border-class')
-    addMoneyOption.classList.remove('border-class')
-    document.getElementById('add-money-form').style.display = 'none'
-    document.getElementById('cashout-money-form').style.display = 'block'
+    toToggle('cashout-money-form', cashoutMoneyOption)
+})
+
+transferMoneyOption.addEventListener('click', function () {
+    toToggle('transfer-money-form', transferMoneyOption)
+})
+
+bonusMoneyOption.addEventListener('click', function () {
+    toToggle('bonus-money-form', bonusMoneyOption)
 })
